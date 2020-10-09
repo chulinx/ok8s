@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e0ef057-b2f4-4f7b-afd6-63858cb0db88" name="Default Changelist" comment="">
+    <list default="true" id="3e0ef057-b2f4-4f7b-afd6-63858cb0db88" name="Default Changelist" comment="add some notes">
       <change beforePath="$PROJECT_DIR$/../GoSomeCase/autoIstio/default_clientset/default_clientset.go" beforeDir="false" afterPath="$PROJECT_DIR$/../GoSomeCase/autoIstio/default_clientset/default_clientset.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/consts.go" beforeDir="false" afterPath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/consts.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/injected.go" beforeDir="false" afterPath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/injected.go" afterDir="false" />
@@ -1328,6 +1328,7 @@
       <change beforePath="$PROJECT_DIR$/../Unicom/short_message_service/vendor/gopkg.in/yaml.v2/yamlh.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Unicom/short_message_service/vendor/gopkg.in/yaml.v2/yamlprivateh.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Unicom/short_message_service/vendor/modules.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../operator/golang/memcached-operator/controllers/memcached_deployment.go" beforeDir="false" afterPath="$PROJECT_DIR$/../operator/golang/memcached-operator/controllers/memcached_deployment.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../operator/golang/memcached-operator/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../operator/golang/memcached-operator/go.sum" afterDir="false" />
     </list>
@@ -1347,6 +1348,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="GO_FMT" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
@@ -1369,6 +1371,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add some notes" />
+    <option name="LAST_COMMIT_MESSAGE" value="add some notes" />
+  </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
@@ -1381,6 +1387,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="341" y="175" key="SettingsEditor/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1601462563380" />
+    <state x="440" y="276" key="Vcs.Push.Dialog.v2" timestamp="1602032241135">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="440" y="276" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1602032241135" />
     <state x="541" y="291" width="598" height="490" key="find.popup" timestamp="1601462463495">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>

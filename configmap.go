@@ -16,11 +16,11 @@ type ConfigMap struct {
 	KResource
 }
 
-
 func (c *ClientSets) Prefix(namespace string) interface{} {
 	return c.ClientSet.CoreV1().ConfigMaps(namespace)
 }
 
+// The resource struct is apicorev1.ConfigMap
 func (c *ConfigMap) Create(namespace string, resource interface{}) (bool, error) {
 	c.KResource.configmap = resource.(apicorev1.ConfigMap)
 	_, err := c.Prefix(namespace).(corev1.ConfigMapInterface).Create(context.TODO(), &c.KResource.configmap, metav1.CreateOptions{})
@@ -30,27 +30,29 @@ func (c *ConfigMap) Create(namespace string, resource interface{}) (bool, error)
 	return true, nil
 }
 
-func (c *ConfigMap)Update(namespace string,resource interface{}) bool {
+// The resource struct is apicorev1.ConfigMap
+func (c *ConfigMap) Update(namespace string, resource interface{}) bool {
 	c.KResource.configmap = resource.(apicorev1.ConfigMap)
-	_, err :=c.Prefix(namespace).(corev1.ConfigMapInterface).Update(context.TODO(),&c.KResource.configmap,metav1.UpdateOptions{})
+	_, err := c.Prefix(namespace).(corev1.ConfigMapInterface).Update(context.TODO(), &c.KResource.configmap, metav1.UpdateOptions{})
 	if err != nil {
 		return false
 	}
 	return true
 }
 
-
-func (c *ConfigMap) Get(namespace,name string) (bool,KResource) {
-	cm,err := c.Prefix(namespace).(corev1.ConfigMapInterface).Get(context.TODO(),name,metav1.GetOptions{})
+// Get return apicorev1.ConfigMap
+func (c *ConfigMap) Get(namespace, name string) (bool, KResource) {
+	cm, err := c.Prefix(namespace).(corev1.ConfigMapInterface).Get(context.TODO(), name, metav1.GetOptions{})
 	c.configmap = *cm
 	if err != nil {
 		return false, c.KResource
 	}
-	return true,c.KResource
+	return true, c.KResource
 }
 
-func (c *ConfigMap)List(namespace string) (KResource, error)  {
-	cms,err :=  c.Prefix(namespace).(corev1.ConfigMapInterface).List(context.TODO(),metav1.ListOptions{})
+// List return multiple apicorev1.ConfigMap
+func (c *ConfigMap) List(namespace string) (KResource, error) {
+	cms, err := c.Prefix(namespace).(corev1.ConfigMapInterface).List(context.TODO(), metav1.ListOptions{})
 	c.configmapList = *cms
 	if err != nil {
 		return c.KResource, err
@@ -58,8 +60,8 @@ func (c *ConfigMap)List(namespace string) (KResource, error)  {
 	return c.KResource, nil
 }
 
-func (c *ConfigMap)Delete(namespace, name string) bool  {
-	err := c.Prefix(namespace).(corev1.ConfigMapInterface).Delete(context.TODO(),name,metav1.DeleteOptions{})
+func (c *ConfigMap) Delete(namespace, name string) bool {
+	err := c.Prefix(namespace).(corev1.ConfigMapInterface).Delete(context.TODO(), name, metav1.DeleteOptions{})
 	if err != nil {
 		return false
 	}

@@ -1,7 +1,5 @@
 package kapi
 
-
-//
 //func TestDeployment_WatchAdd(t *testing.T) {
 //	deploy := &Deployment{ClientSets{ClientSet: default_clientset.ClientSet() }}
 //	eventFuncs := new(cache.ResourceEventHandlerFuncs)

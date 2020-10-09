@@ -7,14 +7,36 @@ import (
 	"k8s.io/client-go/tools/cache"
 )
 
-type K8sApier interface {
+// K8sApi define resource operate method
+type K8sApi interface {
+	// The resource api interface
 	Prefix(namespace string) interface{}
+	// Create resource from namespace and resource struct
 	Create(namespace string, resource interface{}) (bool, error)
-	Get(namespace,name string) (bool,KResource)
+	// Get a resource from namespace and resource name
+	Get(namespace, name string) (bool, KResource)
+	// Delete a resource from namespace and resource name
 	Delete(namespace, name string) bool
+	// List multiple resource from one namespace
 	List(namespace string) (KResource, error)
-	Update(namespace string,resource interface{}) bool
+	// Update a resource
+	Update(namespace string, resource interface{}) bool
 	//Labels(deployment, namespace string) map[string]map[string]string
+	// Watch a resource
+	/* Example:
+	*  eventFuncs := new(cache.ResourceEventHandlerFuncs)
+	*  eventFuncs.DeleteFunc= func(obj interface{}) {
+	*  		deployment := obj.(*appsv1.Deployment)
+	*  		log.Printf("delete deployment %s",deployment.Name)
+	*  		fmt.Println(deployment.Labels,deployment.Spec.Template.Labels)
+	*  }
+	*  eventFuncs.AddFunc= func(obj interface{}) {
+	*  		deployment := obj.(*appsv1.Deployment)
+	*  		log.Printf("add deployment %s",deployment.Name)
+	*  		fmt.Println(deployment.Labels,deployment.Spec.Template.Labels)
+	*  }
+	*  Watch("default",eventFuncs)
+	 */
 	Watch(namespace string, eventFun cache.ResourceEventHandlerFuncs)
 }
 
@@ -31,6 +53,6 @@ type ClientSets struct {
 type KResource struct {
 	deployment     appsv1.Deployment
 	deploymentList appsv1.DeploymentList
-	configmap 	   apicorev1.ConfigMap
+	configmap      apicorev1.ConfigMap
 	configmapList  apicorev1.ConfigMapList
 }

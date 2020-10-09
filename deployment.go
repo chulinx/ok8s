@@ -19,7 +19,6 @@ type Deployment struct {
 	KResource
 }
 
-
 func (d *Deployment) Prefix(namespace string) interface{} {
 	return d.ClientSet.AppsV1().Deployments(namespace)
 }
@@ -41,39 +40,38 @@ func (d *Deployment) Delete(namespace, name string) bool {
 	return true
 }
 
-func (d *Deployment)List(namespace string) (KResource,error)  {
-	deploys,err:=d.Prefix(namespace).(v1.DeploymentInterface).List(context.TODO(),metav1.ListOptions{})
+func (d *Deployment) List(namespace string) (KResource, error) {
+	deploys, err := d.Prefix(namespace).(v1.DeploymentInterface).List(context.TODO(), metav1.ListOptions{})
 	d.KResource.deploymentList = *deploys
 	if err != nil {
-		return d.KResource,err
+		return d.KResource, err
 	}
-	return d.KResource,nil
+	return d.KResource, nil
 }
 
-func (d *Deployment)Get(namespace,name string) (bool,KResource) {
-	deploy,err := d.Prefix(namespace).(v1.DeploymentInterface).Get(context.TODO(),name,metav1.GetOptions{})
+func (d *Deployment) Get(namespace, name string) (bool, KResource) {
+	deploy, err := d.Prefix(namespace).(v1.DeploymentInterface).Get(context.TODO(), name, metav1.GetOptions{})
 	d.KResource.deployment = *deploy
 	if err != nil {
-		return false,d.KResource
+		return false, d.KResource
 	}
-	return true,d.KResource
+	return true, d.KResource
 }
 
-
-func (d *Deployment) Labels(deployment,namespace string) (map[string]map[string]string) {
+func (d *Deployment) Labels(deployment, namespace string) map[string]map[string]string {
 	labels := make(map[string]map[string]string)
-	deploy,err := d.Prefix(namespace).(v1.DeploymentInterface).Get(context.TODO(),deployment,metav1.GetOptions{})
+	deploy, err := d.Prefix(namespace).(v1.DeploymentInterface).Get(context.TODO(), deployment, metav1.GetOptions{})
 	if err != nil {
 		return labels
 	}
-	labels["deployment"]=deploy.Labels
-	labels["pod"]=deploy.Spec.Template.Labels
+	labels["deployment"] = deploy.Labels
+	labels["pod"] = deploy.Spec.Template.Labels
 	return labels
 }
 
-func (d *Deployment) Update(namespace string,resource interface{}) bool {
+func (d *Deployment) Update(namespace string, resource interface{}) bool {
 	d.deployment = resource.(appsv1.Deployment)
-	_,err :=d.Prefix(namespace).(v1.DeploymentInterface).Update(context.TODO(),&d.deployment,metav1.UpdateOptions{})
+	_, err := d.Prefix(namespace).(v1.DeploymentInterface).Update(context.TODO(), &d.deployment, metav1.UpdateOptions{})
 	if err != nil {
 		return false
 	}
