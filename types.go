@@ -13,8 +13,8 @@ type K8sApi interface {
 	// The resource api interface
 	Prefix(namespace string) interface{}
 	// Create resource from namespace and resource struct
-	/* For DeploymentType k8s.io/api/apps/v1 v1.DeploymentType
-	 * For Configmap k8s.io/api/core/v1  v1.ConfigMapType
+	/* For DeploymentType k8s.io/api/apps/v1 v1.deployment
+	 * For Configmap k8s.io/api/core/v1  v1.configmap
 	 */
 	Create(namespace string, resource interface{}) (bool, error)
 	// Get a resource from namespace and resource name
@@ -52,6 +52,8 @@ type ClientSets struct {
 }
 
 // Kubernetes Resource struct
+//
+// Unified all resource
 type KResource struct {
 	Deployment     appsv1.Deployment
 	DeploymentList appsv1.DeploymentList

@@ -1405,7 +1405,6 @@
       <change beforePath="$PROJECT_DIR$/consts.go" beforeDir="false" afterPath="$PROJECT_DIR$/consts.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deployment.go" beforeDir="false" afterPath="$PROJECT_DIR$/deployment.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deployment_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/deployment_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc.go" beforeDir="false" afterPath="$PROJECT_DIR$/doc.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/informer.go" beforeDir="false" afterPath="$PROJECT_DIR$/informer.go" afterDir="false" />
