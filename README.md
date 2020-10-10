@@ -1,6 +1,7 @@
 # :computer: A High encapsulation Kubernetes Golang-api
 > :smiley: Easy use make you Happy
 
+[![GoDoc](https://godoc.org/github.com/chulinx/ok8s?status.svg)](https://godoc.org/github.com/chulinx/ok8s)
 ## :tada: Completion Resource 
 - Ingress
 - Service
