@@ -1,4 +1,4 @@
-package kapi
+package ok8s
 
 import (
 	"k8s.io/api/networking/v1beta1"
@@ -9,7 +9,7 @@ import (
 
 var (
 	ingress = v1beta1.Ingress{
-		ObjectMeta:v1.ObjectMeta{
+		ObjectMeta: v1.ObjectMeta{
 			Name: "web",
 		},
 		Spec: v1beta1.IngressSpec{
@@ -38,6 +38,6 @@ var (
 )
 
 func TestIngress_Create(t *testing.T) {
-	ok,err := i.Create(ns,ingress)
-	AssertError(ok,err,t)
+	ok, err := i.Create(ns, ingress)
+	AssertError(ok, err, t)
 }

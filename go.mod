@@ -1,4 +1,4 @@
-module github.com/chulinx/k8operate-go
+module github.com/chulinx/ok8s
 
 go 1.15
 

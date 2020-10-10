@@ -1,4 +1,4 @@
-package kapi
+package ok8s
 
 import (
 	"context"
@@ -31,10 +31,10 @@ func ClientSet(file string) *kubernetes.Clientset {
 }
 
 func DefaultTimeOut() context.Context {
-	return TimeOut(time.Second*3)
+	return TimeOut(time.Second * 3)
 }
 
-func TimeOut(time time.Duration) context.Context  {
-	ctx, _ := context.WithTimeout(context.TODO(),time)
+func TimeOut(time time.Duration) context.Context {
+	ctx, _ := context.WithTimeout(context.TODO(), time)
 	return ctx
 }

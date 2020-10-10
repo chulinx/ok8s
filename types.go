@@ -1,4 +1,4 @@
-package kapi
+package ok8s
 
 import (
 	appsv1 "k8s.io/api/apps/v1"
@@ -13,8 +13,8 @@ type K8sApi interface {
 	// The resource api interface
 	Prefix(namespace string) interface{}
 	// Create resource from namespace and resource struct
-	/* For deployment k8s.io/api/apps/v1 v1.Deployment
-	 * For configmap k8s.io/api/core/v1  v1.ConfigMap
+	/* For DeploymentType k8s.io/api/apps/v1 v1.DeploymentType
+	 * For Configmap k8s.io/api/core/v1  v1.ConfigMapType
 	 */
 	Create(namespace string, resource interface{}) (bool, error)
 	// Get a resource from namespace and resource name
@@ -27,19 +27,19 @@ type K8sApi interface {
 	List(namespace string) (KResource, error)
 	// Update a resource
 	Update(namespace string, resource interface{}) bool
-	//Labels(deployment, namespace string) map[string]map[string]string
+	//Labels(DeploymentType, namespace string) map[string]map[string]string
 	// Watch a resource
 	/* Example:
 	*  eventFuncs := new(cache.ResourceEventHandlerFuncs)
 	*  eventFuncs.DeleteFunc= func(obj interface{}) {
-	*  		deployment := obj.(*appsv1.Deployment)
-	*  		log.Printf("delete deployment %s",deployment.Name)
-	*  		fmt.Println(deployment.Labels,deployment.Spec.Template.Labels)
+	*  		DeploymentType := obj.(*appsv1.DeploymentType)
+	*  		log.Printf("delete DeploymentType %s",DeploymentType.Name)
+	*  		fmt.Println(Deployment.Labels,DeploymentType.Spec.Template.Labels)
 	*  }
 	*  eventFuncs.AddFunc= func(obj interface{}) {
-	*  		deployment := obj.(*appsv1.Deployment)
-	*  		log.Printf("add deployment %s",deployment.Name)
-	*  		fmt.Println(deployment.Labels,deployment.Spec.Template.Labels)
+	*  		DeploymentType := obj.(*appsv1.DeploymentType)
+	*  		log.Printf("add DeploymentType %s",DeploymentType.Name)
+	*  		fmt.Println(DeploymentType.Labels,DeploymentType.Spec.Template.Labels)
 	*  }
 	*  Watch("default",eventFuncs)
 	 */
@@ -53,16 +53,16 @@ type ClientSets struct {
 
 // Kubernetes Resource struct
 type KResource struct {
-	deployment     appsv1.Deployment
-	deploymentList appsv1.DeploymentList
-	configmap      apicorev1.ConfigMap
-	configmapList  apicorev1.ConfigMapList
-	service        apicorev1.Service
-	serviceList    apicorev1.ServiceList
-	secret 		   apicorev1.Secret
-	secretList	   apicorev1.SecretList
-	ingress 	   v1beta1.Ingress
-	ingressList	   v1beta1.IngressList
+	Deployment     appsv1.Deployment
+	DeploymentList appsv1.DeploymentList
+	Configmap      apicorev1.ConfigMap
+	ConfigmapList  apicorev1.ConfigMapList
+	Service        apicorev1.Service
+	ServiceList    apicorev1.ServiceList
+	Secret         apicorev1.Secret
+	SecretList     apicorev1.SecretList
+	Ingress        v1beta1.Ingress
+	IngressList    v1beta1.IngressList
 }
 
 func NewK8(inter K8sApi) K8sApi {

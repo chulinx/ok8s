@@ -1,4 +1,4 @@
-package kapi
+package ok8s
 
 import (
 	"fmt"
@@ -10,34 +10,34 @@ import (
 	"time"
 )
 
-type Secret struct {
+type SecretType struct {
 	ClientSets
 	KResource
 }
 
 func NewSecret(cs ClientSets) K8sApi {
-	return NewK8(&Secret{
+	return NewK8(&SecretType{
 		ClientSets: cs,
 	})
 }
 
-func (s *Secret)Prefix(namespace string) interface{}  {
+func (s *SecretType) Prefix(namespace string) interface{} {
 	return s.ClientSet.CoreV1().Secrets(namespace)
 }
 
-func (s *Secret) Create(namespace string, resource interface{}) (bool, error) {
-	s.secret = resource.(apicorev1.Secret)
-	_, err := s.Prefix(namespace).(corev1.SecretInterface).Create(DefaultTimeOut(), &s.secret, metav1.CreateOptions{})
+func (s *SecretType) Create(namespace string, resource interface{}) (bool, error) {
+	s.Secret = resource.(apicorev1.Secret)
+	_, err := s.Prefix(namespace).(corev1.SecretInterface).Create(DefaultTimeOut(), &s.Secret, metav1.CreateOptions{})
 	if err != nil {
 		return false, err
 	}
 	return true, nil
 }
 
-func (s *Secret) Get(namespace, name string) (bool, KResource) {
+func (s *SecretType) Get(namespace, name string) (bool, KResource) {
 	secret, err := s.Prefix(namespace).(corev1.SecretInterface).Get(DefaultTimeOut(), name, metav1.GetOptions{})
 	if secret != nil {
-		s.KResource.secret = *secret
+		s.KResource.Secret = *secret
 	}
 	if err != nil {
 		return false, s.KResource
@@ -45,16 +45,15 @@ func (s *Secret) Get(namespace, name string) (bool, KResource) {
 	return true, s.KResource
 }
 
-func (s *Secret)IsExits(namespace, name string) bool  {
-	secret,err :=s.Prefix(namespace).(corev1.SecretInterface).Get(DefaultTimeOut(),name,metav1.GetOptions{})
-	if secret == nil && err != nil {
+func (s *SecretType) IsExits(namespace, name string) bool {
+	secret, err := s.Prefix(namespace).(corev1.SecretInterface).Get(DefaultTimeOut(), name, metav1.GetOptions{})
+	if secret.Name == "" && err != nil {
 		return false
 	}
 	return true
 }
 
-
-func (s *Secret) Delete(namespace, name string) (bool, error) {
+func (s *SecretType) Delete(namespace, name string) (bool, error) {
 	err := s.Prefix(namespace).(corev1.SecretInterface).Delete(DefaultTimeOut(), name, metav1.DeleteOptions{})
 	if err != nil {
 		return false, err
@@ -62,10 +61,10 @@ func (s *Secret) Delete(namespace, name string) (bool, error) {
 	return true, nil
 }
 
-func (s *Secret) List(namespace string) (KResource, error) {
+func (s *SecretType) List(namespace string) (KResource, error) {
 	secrets, err := s.Prefix(namespace).(corev1.SecretInterface).List(DefaultTimeOut(), metav1.ListOptions{})
 	if secrets != nil && len(secrets.Items) > 0 {
-		s.KResource.secretList = *secrets
+		s.KResource.SecretList = *secrets
 	}
 	if err != nil {
 		return s.KResource, err
@@ -73,21 +72,21 @@ func (s *Secret) List(namespace string) (KResource, error) {
 	return s.KResource, nil
 }
 
-func (s *Secret) Update(namespace string, resource interface{}) bool {
-	s.secret = resource.(apicorev1.Secret)
-	_, err := s.Prefix(namespace).(corev1.SecretInterface).Update(DefaultTimeOut(), &s.secret, metav1.UpdateOptions{})
+func (s *SecretType) Update(namespace string, resource interface{}) bool {
+	s.Secret = resource.(apicorev1.Secret)
+	_, err := s.Prefix(namespace).(corev1.SecretInterface).Update(DefaultTimeOut(), &s.Secret, metav1.UpdateOptions{})
 	if err != nil {
 		return false
 	}
 	return true
 }
 
-func (s *Secret) Watch(namespace string, eventFuncs cache.ResourceEventHandlerFuncs) {
+func (s *SecretType) Watch(namespace string, eventFuncs cache.ResourceEventHandlerFuncs) {
 	watchList := cache.NewListWatchFromClient(s.ClientSet.CoreV1().RESTClient(),
 		"secrets", namespace, fields.Everything())
 	fmt.Println(watchList.List(metav1.ListOptions{}))
 	_, controller := cache.NewInformer(watchList,
-		&s.KResource.secret,
+		&s.KResource.Secret,
 		time.Second*0,
 		eventFuncs,
 	)

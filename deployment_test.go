@@ -1,4 +1,4 @@
-package kapi
+package ok8s
 
 import (
 	"fmt"
@@ -10,10 +10,10 @@ import (
 )
 
 var (
-	ns = "test"
-	d = NewDeployment(NewTestClientSet())
+	ns       = "test"
+	d        = NewDeployment(NewTestClientSet())
 	replicas = int32(1)
-	deploy = appsv1.Deployment{
+	deploy   = appsv1.Deployment{
 		ObjectMeta: metav1.ObjectMeta{Name: "web"},
 		Spec: appsv1.DeploymentSpec{
 			Replicas: &replicas,
@@ -55,21 +55,19 @@ func TestDeployment_Create(t *testing.T) {
 
 func TestDeployment_Update(t *testing.T) {
 	replicas = int32(2)
-	ok := d.Update(ns,deploy)
-	Assert(ok,t)
+	ok := d.Update(ns, deploy)
+	Assert(ok, t)
 }
 
 func TestDeployment_IsExits(t *testing.T) {
-	ok := d.IsExits(ns,"web")
-	Assert(ok,t)
+	ok := d.IsExits(ns, "web")
+	Assert(ok, t)
 }
 
-
-
 func TestDeployment_Get(t *testing.T) {
-	ok,krs := d.Get(ns,"web")
-	if krs.deployment.Name != "" {
-		Assert(ok,t)
+	ok, krs := d.Get(ns, "web")
+	if krs.Deployment.Name != "" {
+		Assert(ok, t)
 	}
 }
 
@@ -81,27 +79,26 @@ func TestDeployment_Delete(t *testing.T) {
 func TestDeployment_Watch(t *testing.T) {
 	watchFuncs := cache.ResourceEventHandlerFuncs{
 		AddFunc: func(obj interface{}) {
-			fmt.Printf("Create deployment %s\n", obj.(*appsv1.Deployment).Name)
+			fmt.Printf("Create DeploymentType %s\n", obj.(*appsv1.Deployment).Name)
 		},
 		DeleteFunc: func(obj interface{}) {
-			fmt.Printf("Delete deployment %s\n", obj.(*appsv1.Deployment).Name)
+			fmt.Printf("Delete DeploymentType %s\n", obj.(*appsv1.Deployment).Name)
 		},
 		UpdateFunc: func(oldObj, newObj interface{}) {
-			fmt.Printf("Update deployment %s\n", oldObj.(*appsv1.Deployment).Name)
+			fmt.Printf("Update DeploymentType %s\n", oldObj.(*appsv1.Deployment).Name)
 		},
 	}
 	d.Watch("test", watchFuncs)
 }
 
 // 断言assert
-func Assert(ok bool,t *testing.T)  {
+func Assert(ok bool, t *testing.T) {
 	if !ok {
 		t.Fatalf("Failed")
-	}else {
+	} else {
 		t.Logf("Success")
 	}
 }
-
 
 func AssertError(ok bool, err error, t *testing.T) {
 	if !ok {

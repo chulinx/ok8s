@@ -1,4 +1,4 @@
-package kapi
+package ok8s
 
 import (
 	"fmt"
@@ -12,34 +12,34 @@ import (
 	"time"
 )
 
-type Ingress struct {
+type IngressType struct {
 	ClientSets
 	KResource
 }
 
-func NewIngress(cs ClientSets)  K8sApi {
-	return NewK8(&Ingress{
-		ClientSets:cs,
+func NewIngress(cs ClientSets) K8sApi {
+	return NewK8(&IngressType{
+		ClientSets: cs,
 	})
 }
 
-func (i *Ingress)Prefix(namespace string) interface{}  {
+func (i *IngressType) Prefix(namespace string) interface{} {
 	return i.ClientSet.NetworkingV1beta1().Ingresses(namespace)
 }
 
-func (i *Ingress) Create(namespace string, resource interface{}) (bool, error) {
-	i.ingress = resource.(v1beta1.Ingress)
-	_, err := i.Prefix(namespace).(networkv1beta1.IngressInterface).Create(DefaultTimeOut(),&i.ingress,metav1.CreateOptions{})
+func (i *IngressType) Create(namespace string, resource interface{}) (bool, error) {
+	i.Ingress = resource.(v1beta1.Ingress)
+	_, err := i.Prefix(namespace).(networkv1beta1.IngressInterface).Create(DefaultTimeOut(), &i.Ingress, metav1.CreateOptions{})
 	if err != nil {
 		return false, err
 	}
 	return true, nil
 }
 
-func (i *Ingress) Get(namespace, name string) (bool, KResource) {
+func (i *IngressType) Get(namespace, name string) (bool, KResource) {
 	ingress, err := i.Prefix(namespace).(networkv1beta1.IngressInterface).Get(DefaultTimeOut(), name, metav1.GetOptions{})
 	if ingress != nil {
-		i.KResource.ingress = *ingress
+		i.KResource.Ingress = *ingress
 	}
 	if err != nil {
 		return false, i.KResource
@@ -47,16 +47,15 @@ func (i *Ingress) Get(namespace, name string) (bool, KResource) {
 	return true, i.KResource
 }
 
-func (i *Ingress)IsExits(namespace, name string) bool  {
-	secret,err :=i.Prefix(namespace).(networkv1beta1.IngressInterface).Get(DefaultTimeOut(),name,metav1.GetOptions{})
-	if secret == nil && err != nil {
+func (i *IngressType) IsExits(namespace, name string) bool {
+	ingress, err := i.Prefix(namespace).(networkv1beta1.IngressInterface).Get(DefaultTimeOut(), name, metav1.GetOptions{})
+	if ingress.Name == "" && err != nil {
 		return false
 	}
 	return true
 }
 
-
-func (i *Ingress) Delete(namespace, name string) (bool, error) {
+func (i *IngressType) Delete(namespace, name string) (bool, error) {
 	err := i.Prefix(namespace).(networkv1beta1.IngressInterface).Delete(DefaultTimeOut(), name, metav1.DeleteOptions{})
 	if err != nil {
 		return false, err
@@ -64,10 +63,10 @@ func (i *Ingress) Delete(namespace, name string) (bool, error) {
 	return true, nil
 }
 
-func (i *Ingress) List(namespace string) (KResource, error) {
+func (i *IngressType) List(namespace string) (KResource, error) {
 	ingress, err := i.Prefix(namespace).(corev1.SecretInterface).List(DefaultTimeOut(), metav1.ListOptions{})
 	if ingress != nil && len(ingress.Items) > 0 {
-		i.KResource.secretList = *ingress
+		i.KResource.SecretList = *ingress
 	}
 	if err != nil {
 		return i.KResource, err
@@ -75,21 +74,21 @@ func (i *Ingress) List(namespace string) (KResource, error) {
 	return i.KResource, nil
 }
 
-func (i *Ingress) Update(namespace string, resource interface{}) bool {
-	i.secret = resource.(apicorev1.Secret)
-	_, err := i.Prefix(namespace).(corev1.SecretInterface).Update(DefaultTimeOut(), &i.secret, metav1.UpdateOptions{})
+func (i *IngressType) Update(namespace string, resource interface{}) bool {
+	i.Secret = resource.(apicorev1.Secret)
+	_, err := i.Prefix(namespace).(corev1.SecretInterface).Update(DefaultTimeOut(), &i.Secret, metav1.UpdateOptions{})
 	if err != nil {
 		return false
 	}
 	return true
 }
 
-func (i *Ingress) Watch(namespace string, eventFuncs cache.ResourceEventHandlerFuncs) {
+func (i *IngressType) Watch(namespace string, eventFuncs cache.ResourceEventHandlerFuncs) {
 	watchList := cache.NewListWatchFromClient(i.ClientSet.NetworkingV1beta1().RESTClient(),
 		"ingresses", namespace, fields.Everything())
 	fmt.Println(watchList.List(metav1.ListOptions{}))
 	_, controller := cache.NewInformer(watchList,
-		&i.KResource.ingress,
+		&i.KResource.Ingress,
 		time.Second*0,
 		eventFuncs,
 	)

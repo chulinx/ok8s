@@ -1,4 +1,4 @@
-package kapi
+package ok8s
 
 import (
 	"fmt"
@@ -10,9 +10,9 @@ import (
 )
 
 var (
-	s = NewService(NewTestClientSet())
+	s       = NewService(NewTestClientSet())
 	service = apicorev1.Service{
-		ObjectMeta:v1.ObjectMeta{
+		ObjectMeta: v1.ObjectMeta{
 			Name: "web",
 		},
 		Spec: apicorev1.ServiceSpec{
@@ -22,9 +22,9 @@ var (
 			Type: apicorev1.ServiceTypeClusterIP,
 			Ports: []apicorev1.ServicePort{
 				{
-					Name: "web",
-					Protocol: apicorev1.ProtocolTCP,
-					Port: 80,
+					Name:       "web",
+					Protocol:   apicorev1.ProtocolTCP,
+					Port:       80,
 					TargetPort: intstr.IntOrString{IntVal: 80},
 				},
 			},
@@ -33,26 +33,26 @@ var (
 )
 
 func TestService_Create(t *testing.T) {
-	ok,err := s.Create(ns,service)
-	AssertError(ok,err,t)
+	ok, err := s.Create(ns, service)
+	AssertError(ok, err, t)
 }
 
 func TestService_IsExits(t *testing.T) {
-	ok := s.IsExits(ns,"web")
-	Assert(ok,t)
+	ok := s.IsExits(ns, "web")
+	Assert(ok, t)
 }
 
 func TestService_Watch(t *testing.T) {
 	watchFuncs := cache.ResourceEventHandlerFuncs{
 		AddFunc: func(obj interface{}) {
-			fmt.Printf("Create service %s\n", obj.(*apicorev1.Service).Name)
+			fmt.Printf("Create ServiceType %s\n", obj.(*apicorev1.Service).Name)
 		},
 		DeleteFunc: func(obj interface{}) {
-			fmt.Printf("Delete service %s\n", obj.(*apicorev1.Service).Name)
+			fmt.Printf("Delete ServiceType %s\n", obj.(*apicorev1.Service).Name)
 		},
 		UpdateFunc: func(oldObj, newObj interface{}) {
-			fmt.Printf("Update service %s\n", oldObj.(*apicorev1.Service).Name)
+			fmt.Printf("Update ServiceType %s\n", oldObj.(*apicorev1.Service).Name)
 		},
 	}
-	s.Watch(ns,watchFuncs)
+	s.Watch(ns, watchFuncs)
 }

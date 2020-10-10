@@ -1,4 +1,4 @@
-package kapi
+package ok8s
 
 import (
 	"fmt"
@@ -9,21 +9,21 @@ import (
 )
 
 var (
-	cm = apicorev1.ConfigMap {
+	cm = apicorev1.ConfigMap{
 		ObjectMeta: v1.ObjectMeta{
 			Name: "web-cm",
 		},
 		Data: map[string]string{
-			"user":"root",
-			"password":"123456",
+			"user":     "root",
+			"password": "123456",
 		},
 	}
 	c = NewConfigMap(NewTestClientSet())
 )
 
 func TestConfigMap_Create(t *testing.T) {
-	ok,err := c.Create(ns,cm)
-	AssertError(ok,err,t)
+	ok, err := c.Create(ns, cm)
+	AssertError(ok, err, t)
 }
 
 func TestConfigMap_Watch(t *testing.T) {
@@ -38,5 +38,5 @@ func TestConfigMap_Watch(t *testing.T) {
 			fmt.Printf("Update cm %s\n", oldObj.(*apicorev1.ConfigMap).Name)
 		},
 	}
-	c.Watch(ns,watchFuncs)
+	c.Watch(ns, watchFuncs)
 }

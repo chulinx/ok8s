@@ -1,4 +1,4 @@
-package kapi
+package ok8s
 
 import (
 	"fmt"

@@ -1,4 +1,4 @@
-package kapi
+package ok8s
 
 import (
 	"fmt"
@@ -10,50 +10,49 @@ import (
 	"time"
 )
 
-type Service struct {
+type ServiceType struct {
 	ClientSets
 	KResource
 }
 
 func NewService(cs ClientSets) K8sApi {
-	s := &Service{
+	s := &ServiceType{
 		ClientSets: cs,
 	}
 	return NewK8(s)
 }
 
-func (s *Service) Prefix(namespace string) interface{} {
+func (s *ServiceType) Prefix(namespace string) interface{} {
 	return s.ClientSet.CoreV1().Services(namespace)
 }
 
-func (s *Service) Create(namespace string, resource interface{}) (bool, error) {
-	s.service = resource.(apicorev1.Service)
-	_, err := s.Prefix(namespace).(corev1.ServiceInterface).Create(DefaultTimeOut(), &s.service, metav1.CreateOptions{})
+func (s *ServiceType) Create(namespace string, resource interface{}) (bool, error) {
+	s.Service = resource.(apicorev1.Service)
+	_, err := s.Prefix(namespace).(corev1.ServiceInterface).Create(DefaultTimeOut(), &s.Service, metav1.CreateOptions{})
 	if err != nil {
 		return false, err
 	}
 	return true, nil
 }
 
-func (s *Service) Get(namespace, name string) (bool, KResource) {
+func (s *ServiceType) Get(namespace, name string) (bool, KResource) {
 	service, err := s.Prefix(namespace).(corev1.ServiceInterface).Get(DefaultTimeOut(), name, metav1.GetOptions{})
-	s.KResource.service = *service
+	s.KResource.Service = *service
 	if err != nil {
 		return false, s.KResource
 	}
 	return true, s.KResource
 }
 
-func (s *Service)IsExits(namespace, name string) bool  {
-	service,err :=s.Prefix(namespace).(corev1.ServiceInterface).Get(DefaultTimeOut(),name,metav1.GetOptions{})
-	if service == nil && err != nil {
+func (s *ServiceType) IsExits(namespace, name string) bool {
+	service, err := s.Prefix(namespace).(corev1.ServiceInterface).Get(DefaultTimeOut(), name, metav1.GetOptions{})
+	if service.Name == "" && err != nil {
 		return false
 	}
 	return true
 }
 
-
-func (s *Service) Delete(namespace, name string) (bool, error) {
+func (s *ServiceType) Delete(namespace, name string) (bool, error) {
 	err := s.Prefix(namespace).(corev1.ServiceInterface).Delete(DefaultTimeOut(), name, metav1.DeleteOptions{})
 	if err != nil {
 		return false, err
@@ -61,30 +60,30 @@ func (s *Service) Delete(namespace, name string) (bool, error) {
 	return true, nil
 }
 
-func (s *Service) List(namespace string) (KResource, error) {
+func (s *ServiceType) List(namespace string) (KResource, error) {
 	services, err := s.Prefix(namespace).(corev1.ServiceInterface).List(DefaultTimeOut(), metav1.ListOptions{})
-	s.KResource.serviceList = *services
+	s.KResource.ServiceList = *services
 	if err != nil {
 		return s.KResource, err
 	}
 	return s.KResource, nil
 }
 
-func (s *Service) Update(namespace string, resource interface{}) bool {
-	s.service = resource.(apicorev1.Service)
-	_, err := s.Prefix(namespace).(corev1.ServiceInterface).Update(DefaultTimeOut(), &s.service, metav1.UpdateOptions{})
+func (s *ServiceType) Update(namespace string, resource interface{}) bool {
+	s.Service = resource.(apicorev1.Service)
+	_, err := s.Prefix(namespace).(corev1.ServiceInterface).Update(DefaultTimeOut(), &s.Service, metav1.UpdateOptions{})
 	if err != nil {
 		return false
 	}
 	return true
 }
 
-func (s *Service) Watch(namespace string, eventFuncs cache.ResourceEventHandlerFuncs) {
+func (s *ServiceType) Watch(namespace string, eventFuncs cache.ResourceEventHandlerFuncs) {
 	watchList := cache.NewListWatchFromClient(s.ClientSet.CoreV1().RESTClient(),
 		"services", namespace, fields.Everything())
 	fmt.Println(watchList.List(metav1.ListOptions{}))
 	_, controller := cache.NewInformer(watchList,
-		&s.KResource.service,
+		&s.KResource.Service,
 		time.Second*0,
 		eventFuncs,
 	)

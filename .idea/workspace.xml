@@ -1402,9 +1402,13 @@
       <change beforePath="$PROJECT_DIR$/../Unicom/short_message_service/vendor/modules.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configmap.go" beforeDir="false" afterPath="$PROJECT_DIR$/configmap.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts.go" beforeDir="false" afterPath="$PROJECT_DIR$/consts.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deployment.go" beforeDir="false" afterPath="$PROJECT_DIR$/deployment.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deployment_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/deployment_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/informer.go" beforeDir="false" afterPath="$PROJECT_DIR$/informer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/informer_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/informer_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/namespace.go" beforeDir="false" afterPath="$PROJECT_DIR$/namespace.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/types.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
@@ -1444,7 +1448,16 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Go Test.TestService_Create in github.com/chulinx/k8operate-go">
+  <component name="RunManager" selected="Go Build.go build github.com/chulinx/ok8s/examples">
+    <configuration name="go build github.com/chulinx/ok8s/examples" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="k8operate-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/examples/main.go" />
+      <package value="github.com/chulinx/ok8s/examples" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestConfigMap_Create in github.com/chulinx/k8operate-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="k8operate-go" />
       <working_directory value="$PROJECT_DIR$" />
@@ -1489,24 +1502,13 @@
       <pattern value="^\QTestService_Create\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestService_Watch in github.com/chulinx/k8operate-go (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="k8operate-go" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chulinx/k8operate-go" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestService_Watch\E$" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build github.com/chulinx/ok8s/examples" />
         <item itemvalue="Go Test.TestService_Create in github.com/chulinx/k8operate-go" />
         <item itemvalue="Go Test.TestIngress_Create in github.com/chulinx/k8operate-go" />
         <item itemvalue="Go Test.TestConfigMap_Watch in github.com/chulinx/k8operate-go" />
         <item itemvalue="Go Test.TestConfigMap_Create in github.com/chulinx/k8operate-go" />
-        <item itemvalue="Go Test.TestService_Watch in github.com/chulinx/k8operate-go (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -1537,22 +1539,22 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="604" y="251" width="472" height="576" key="#Build_Tags_&amp;_Vendoring/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602215443822" />
-    <state width="1638" height="280" key="GridCell.Tab.0.bottom" timestamp="1602317179749">
+    <state width="1638" height="280" key="GridCell.Tab.0.bottom" timestamp="1602320329170">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="280" key="GridCell.Tab.0.bottom/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602317179749" />
-    <state width="1638" height="280" key="GridCell.Tab.0.center" timestamp="1602317179748">
+    <state width="1638" height="280" key="GridCell.Tab.0.bottom/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602320329170" />
+    <state width="1638" height="280" key="GridCell.Tab.0.center" timestamp="1602320329169">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="280" key="GridCell.Tab.0.center/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602317179748" />
-    <state width="1638" height="280" key="GridCell.Tab.0.left" timestamp="1602317179748">
+    <state width="1638" height="280" key="GridCell.Tab.0.center/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602320329169" />
+    <state width="1638" height="280" key="GridCell.Tab.0.left" timestamp="1602320329169">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="280" key="GridCell.Tab.0.left/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602317179748" />
-    <state width="1638" height="280" key="GridCell.Tab.0.right" timestamp="1602317179749">
+    <state width="1638" height="280" key="GridCell.Tab.0.left/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602320329169" />
+    <state width="1638" height="280" key="GridCell.Tab.0.right" timestamp="1602320329170">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="280" key="GridCell.Tab.0.right/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602317179749" />
+    <state width="1638" height="280" key="GridCell.Tab.0.right/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602320329170" />
     <state x="428" y="278" key="IDE.errors.dialog" timestamp="1601462495624">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
@@ -1569,10 +1571,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="440" y="276" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1602032241135" />
-    <state x="541" y="291" width="598" height="548" key="find.popup" timestamp="1602238060515">
+    <state x="541" y="291" width="598" height="548" key="find.popup" timestamp="1602317947619">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="541" y="291" width="598" height="548" key="find.popup/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602238060515" />
+    <state x="541" y="291" width="598" height="548" key="find.popup/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602317947619" />
     <state x="683" y="305" key="refactoring.ChangeSignatureDialog" timestamp="1602237884809">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
