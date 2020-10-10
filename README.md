@@ -1,4 +1,5 @@
 # :computer: A High encapsulation Kubernetes Golang-api
+> :smiley: Easy use make you Happy
 
 ## :tada: Completion Resource 
 - Ingress
