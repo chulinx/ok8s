@@ -17,7 +17,7 @@
 - IsExits
 
 ## :wrench: EXAMPLE
-> Your can cat ```examples``` Directory Complete code 
+> Your can cat [example](https://github.com/chulinx/ok8s/tree/master/examples) Directory Complete code 
 ```go
 package main
 
