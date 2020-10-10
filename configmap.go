@@ -1,7 +1,6 @@
 package kapi
 
 import (
-	"context"
 	"fmt"
 	apicorev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -16,6 +15,13 @@ type ConfigMap struct {
 	KResource
 }
 
+func NewConfigMap(cs ClientSets) K8sApi {
+	c := &ConfigMap{
+		ClientSets: cs,
+	}
+	return NewK8(c)
+}
+
 func (c *ClientSets) Prefix(namespace string) interface{} {
 	return c.ClientSet.CoreV1().ConfigMaps(namespace)
 }
@@ -23,7 +29,7 @@ func (c *ClientSets) Prefix(namespace string) interface{} {
 // The resource struct is apicorev1.ConfigMap
 func (c *ConfigMap) Create(namespace string, resource interface{}) (bool, error) {
 	c.KResource.configmap = resource.(apicorev1.ConfigMap)
-	_, err := c.Prefix(namespace).(corev1.ConfigMapInterface).Create(context.TODO(), &c.KResource.configmap, metav1.CreateOptions{})
+	_, err := c.Prefix(namespace).(corev1.ConfigMapInterface).Create(DefaultTimeOut(), &c.KResource.configmap, metav1.CreateOptions{})
 	if err != nil {
 		return false, err
 	}
@@ -33,8 +39,16 @@ func (c *ConfigMap) Create(namespace string, resource interface{}) (bool, error)
 // The resource struct is apicorev1.ConfigMap
 func (c *ConfigMap) Update(namespace string, resource interface{}) bool {
 	c.KResource.configmap = resource.(apicorev1.ConfigMap)
-	_, err := c.Prefix(namespace).(corev1.ConfigMapInterface).Update(context.TODO(), &c.KResource.configmap, metav1.UpdateOptions{})
+	_, err := c.Prefix(namespace).(corev1.ConfigMapInterface).Update(DefaultTimeOut(), &c.KResource.configmap, metav1.UpdateOptions{})
 	if err != nil {
+		return false
+	}
+	return true
+}
+
+func (c *ConfigMap)IsExits(namespace, name string) bool  {
+	configmap,err :=c.Prefix(namespace).(corev1.ConfigMapInterface).Get(DefaultTimeOut(),name,metav1.GetOptions{})
+	if configmap == nil && err != nil {
 		return false
 	}
 	return true
@@ -42,7 +56,7 @@ func (c *ConfigMap) Update(namespace string, resource interface{}) bool {
 
 // Get return apicorev1.ConfigMap
 func (c *ConfigMap) Get(namespace, name string) (bool, KResource) {
-	cm, err := c.Prefix(namespace).(corev1.ConfigMapInterface).Get(context.TODO(), name, metav1.GetOptions{})
+	cm, err := c.Prefix(namespace).(corev1.ConfigMapInterface).Get(DefaultTimeOut(), name, metav1.GetOptions{})
 	c.configmap = *cm
 	if err != nil {
 		return false, c.KResource
@@ -52,7 +66,7 @@ func (c *ConfigMap) Get(namespace, name string) (bool, KResource) {
 
 // List return multiple apicorev1.ConfigMap
 func (c *ConfigMap) List(namespace string) (KResource, error) {
-	cms, err := c.Prefix(namespace).(corev1.ConfigMapInterface).List(context.TODO(), metav1.ListOptions{})
+	cms, err := c.Prefix(namespace).(corev1.ConfigMapInterface).List(DefaultTimeOut(), metav1.ListOptions{})
 	c.configmapList = *cms
 	if err != nil {
 		return c.KResource, err
@@ -60,26 +74,23 @@ func (c *ConfigMap) List(namespace string) (KResource, error) {
 	return c.KResource, nil
 }
 
-func (c *ConfigMap) Delete(namespace, name string) bool {
-	err := c.Prefix(namespace).(corev1.ConfigMapInterface).Delete(context.TODO(), name, metav1.DeleteOptions{})
+func (c *ConfigMap) Delete(namespace, name string) (bool, error) {
+	err := c.Prefix(namespace).(corev1.ConfigMapInterface).Delete(DefaultTimeOut(), name, metav1.DeleteOptions{})
 	if err != nil {
-		return false
+		return false, err
 	}
-	return true
+	return true, nil
 }
 
-func (d *ConfigMap) Watch(namespace string, eventFun cache.ResourceEventHandlerFuncs) {
+func (d *ConfigMap) Watch(namespace string, eventFuncs cache.ResourceEventHandlerFuncs) {
 	watchList := cache.NewListWatchFromClient(d.ClientSet.CoreV1().RESTClient(),
 		"configmaps", namespace, fields.Everything())
 	fmt.Println(watchList.List(metav1.ListOptions{}))
 	_, controller := cache.NewInformer(watchList,
-		&apicorev1.ConfigMap{},
+		&d.KResource.configmap,
 		time.Second*0,
-		cache.ResourceEventHandlerFuncs{
-			AddFunc:    eventFun.AddFunc,
-			DeleteFunc: eventFun.DeleteFunc,
-			UpdateFunc: eventFun.UpdateFunc,
-		})
+		eventFuncs,
+	)
 	stop := make(chan struct{})
 	go controller.Run(stop)
 	for {

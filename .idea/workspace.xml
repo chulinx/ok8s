@@ -20,6 +20,78 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e0ef057-b2f4-4f7b-afd6-63858cb0db88" name="Default Changelist" comment="add some notes">
+      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/CODE_OF_CONDUCT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/map.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/merge.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/mergo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/bool.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/bool_slice.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/bytes.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/count.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/duration.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/duration_slice.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/flag.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/float32.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/float32_slice.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/float64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/float64_slice.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/golangflag.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/int.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/int16.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/int32.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/int32_slice.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/int64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/int64_slice.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/int8.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/int_slice.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/ip.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/ip_slice.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/ipmask.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/ipnet.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/string.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/string_array.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/string_slice.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/string_to_int.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/string_to_int64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/string_to_string.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/uint.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/uint16.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/uint32.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/uint64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/uint8.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/uint_slice.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/auth/OWNERS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/auth/clientauth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/latest/latest.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/conversion.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/register.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/types.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/zz_generated.conversion.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/zz_generated.deepcopy.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/auth_loaders.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/client_config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/flag.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/helpers.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/loader.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/merged_client_builder.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/overrides.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/validation.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/util/homedir/homedir.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoSomeCase/autoIstio/default_clientset/default_clientset.go" beforeDir="false" afterPath="$PROJECT_DIR$/../GoSomeCase/autoIstio/default_clientset/default_clientset.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/consts.go" beforeDir="false" afterPath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/consts.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/injected.go" beforeDir="false" afterPath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/injected.go" afterDir="false" />
@@ -1329,6 +1401,13 @@
       <change beforePath="$PROJECT_DIR$/../Unicom/short_message_service/vendor/gopkg.in/yaml.v2/yamlprivateh.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Unicom/short_message_service/vendor/modules.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configmap.go" beforeDir="false" afterPath="$PROJECT_DIR$/configmap.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment.go" beforeDir="false" afterPath="$PROJECT_DIR$/deployment.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/deployment_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/namespace.go" beforeDir="false" afterPath="$PROJECT_DIR$/namespace.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/types.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../operator/golang/memcached-operator/controllers/memcached_deployment.go" beforeDir="false" afterPath="$PROJECT_DIR$/../operator/golang/memcached-operator/controllers/memcached_deployment.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../operator/golang/memcached-operator/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../operator/golang/memcached-operator/go.sum" afterDir="false" />
     </list>
@@ -1336,6 +1415,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.15/libexec" />
   <component name="Git.Settings">
@@ -1348,13 +1434,81 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="GO_FMT" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="ToolWindowCommit.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="go.vgo" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager" selected="Go Test.TestService_Create in github.com/chulinx/k8operate-go">
+    <configuration name="TestConfigMap_Create in github.com/chulinx/k8operate-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="k8operate-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chulinx/k8operate-go" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestConfigMap_Create\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestConfigMap_Watch in github.com/chulinx/k8operate-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="k8operate-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chulinx/k8operate-go" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestConfigMap_Watch\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestIngress_Create in github.com/chulinx/k8operate-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="k8operate-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chulinx/k8operate-go" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestIngress_Create\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestService_Create in github.com/chulinx/k8operate-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="k8operate-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chulinx/k8operate-go" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestService_Create\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestService_Watch in github.com/chulinx/k8operate-go (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="k8operate-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chulinx/k8operate-go" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestService_Watch\E$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.TestService_Create in github.com/chulinx/k8operate-go" />
+        <item itemvalue="Go Test.TestIngress_Create in github.com/chulinx/k8operate-go" />
+        <item itemvalue="Go Test.TestConfigMap_Watch in github.com/chulinx/k8operate-go" />
+        <item itemvalue="Go Test.TestConfigMap_Create in github.com/chulinx/k8operate-go" />
+        <item itemvalue="Go Test.TestService_Watch in github.com/chulinx/k8operate-go (2)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
@@ -1379,21 +1533,53 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
+    <state x="604" y="251" width="472" height="576" key="#Build_Tags_&amp;_Vendoring" timestamp="1602215443822">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="604" y="251" width="472" height="576" key="#Build_Tags_&amp;_Vendoring/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602215443822" />
+    <state width="1638" height="280" key="GridCell.Tab.0.bottom" timestamp="1602317179749">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1638" height="280" key="GridCell.Tab.0.bottom/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602317179749" />
+    <state width="1638" height="280" key="GridCell.Tab.0.center" timestamp="1602317179748">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1638" height="280" key="GridCell.Tab.0.center/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602317179748" />
+    <state width="1638" height="280" key="GridCell.Tab.0.left" timestamp="1602317179748">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1638" height="280" key="GridCell.Tab.0.left/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602317179748" />
+    <state width="1638" height="280" key="GridCell.Tab.0.right" timestamp="1602317179749">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1638" height="280" key="GridCell.Tab.0.right/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602317179749" />
     <state x="428" y="278" key="IDE.errors.dialog" timestamp="1601462495624">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="428" y="278" key="IDE.errors.dialog/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1601462495624" />
-    <state x="341" y="175" key="SettingsEditor" timestamp="1601462563380">
+    <state x="624" y="246" key="RollbackChangesDialog" timestamp="1602214055134">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="341" y="175" key="SettingsEditor/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1601462563380" />
+    <state x="624" y="246" key="RollbackChangesDialog/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602214055134" />
+    <state x="0" y="23" width="1680" height="874" key="SettingsEditor" timestamp="1602229207486">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="0" y="23" width="1680" height="874" key="SettingsEditor/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602229207486" />
     <state x="440" y="276" key="Vcs.Push.Dialog.v2" timestamp="1602032241135">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="440" y="276" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1602032241135" />
-    <state x="541" y="291" width="598" height="490" key="find.popup" timestamp="1601462463495">
+    <state x="541" y="291" width="598" height="548" key="find.popup" timestamp="1602238060515">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="541" y="291" width="598" height="490" key="find.popup/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1601462463495" />
+    <state x="541" y="291" width="598" height="548" key="find.popup/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602238060515" />
+    <state x="683" y="305" key="refactoring.ChangeSignatureDialog" timestamp="1602237884809">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="683" y="305" key="refactoring.ChangeSignatureDialog/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602237884809" />
+    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1602299364212">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602299364212" />
   </component>
 </project>
