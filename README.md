@@ -16,7 +16,7 @@
 - Watch
 - IsExits
 
-## EXAMPLE
+## :wrench: EXAMPLE
 > Your can cat ```examples``` Directory Complete code 
 ```go
 package main
