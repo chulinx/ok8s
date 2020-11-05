@@ -12,7 +12,7 @@ func NewClientSet(clientset *kubernetes.Clientset) *ClientSets {
 }
 
 func NewTestClientSet() ClientSets {
-	return *NewClientSet(ClientSet("/Users/lisong/.kube/dq_test.conf"))
+	return *NewClientSet(ClientSet("/Users/lisong/.kube/ack-devops.conf"))
 }
 
 func ClientSet(file string) *kubernetes.Clientset {

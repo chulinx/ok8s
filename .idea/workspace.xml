@@ -21,77 +21,41 @@
   <component name="ChangeListManager">
     <list default="true" id="3e0ef057-b2f4-4f7b-afd6-63858cb0db88" name="Default Changelist" comment="add some notes">
       <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/CODE_OF_CONDUCT.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/doc.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/map.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/merge.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/imdario/mergo/mergo.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/bool.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/bool_slice.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/bytes.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/count.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/duration.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/duration_slice.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/flag.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/float32.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/float32_slice.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/float64.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/float64_slice.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/go.sum" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/golangflag.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/int.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/int16.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/int32.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/int32_slice.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/int64.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/int64_slice.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/int8.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/int_slice.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/ip.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/ip_slice.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/ipmask.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/ipnet.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/string.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/string_array.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/string_slice.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/string_to_int.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/string_to_int64.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/string_to_string.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/uint.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/uint16.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/uint32.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/uint64.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/uint8.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/github.com/spf13/pflag/uint_slice.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/auth/OWNERS" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/auth/clientauth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/latest/latest.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/conversion.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/doc.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/register.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/types.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/zz_generated.conversion.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/api/v1/zz_generated.deepcopy.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/auth_loaders.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/client_config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/doc.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/flag.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/helpers.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/loader.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/merged_client_builder.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/overrides.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/tools/clientcmd/validation.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/k8s.io/client-go/util/homedir/homedir.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cleandatafordb/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cleandatafordb/clean.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cleandatafordb/clean_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cleandatafordb/commands.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cleandatafordb/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cleandatafordb/mysql.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cleandatafordb/postgresql.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cleandatafordb/postgresql_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/cmd/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/dao/dao.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/dao/influxGet.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/dao/influxSet.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/dao/sync.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/dao/types.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/influxdb/influxdb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/influxdb/influxdb_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/influxdb/type.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/middleware/cors.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/middleware/response.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/proxy/handler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/proxy/handler_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/scripts/buildenv.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/utils/assert.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/utils/error.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/utils/tools.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/vars/vars.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hex-devops/load/cpu.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hex-devops/load/cpu_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hex-devops/load/mem.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hex-devops/load/types.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hex-devops/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pod.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoSomeCase/autoIstio/default_clientset/default_clientset.go" beforeDir="false" afterPath="$PROJECT_DIR$/../GoSomeCase/autoIstio/default_clientset/default_clientset.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/consts.go" beforeDir="false" afterPath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/consts.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/injected.go" beforeDir="false" afterPath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/injected.go" afterDir="false" />
@@ -1400,18 +1364,12 @@
       <change beforePath="$PROJECT_DIR$/../Unicom/short_message_service/vendor/gopkg.in/yaml.v2/yamlh.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Unicom/short_message_service/vendor/gopkg.in/yaml.v2/yamlprivateh.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Unicom/short_message_service/vendor/modules.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../beggars/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../beggars/cmd/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configmap.go" beforeDir="false" afterPath="$PROJECT_DIR$/configmap.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consts.go" beforeDir="false" afterPath="$PROJECT_DIR$/consts.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment.go" beforeDir="false" afterPath="$PROJECT_DIR$/deployment.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deployment_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/deployment_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/informer.go" beforeDir="false" afterPath="$PROJECT_DIR$/informer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/informer_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/informer_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/namespace.go" beforeDir="false" afterPath="$PROJECT_DIR$/namespace.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/types.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../operator/golang/memcached-operator/controllers/memcached_deployment.go" beforeDir="false" afterPath="$PROJECT_DIR$/../operator/golang/memcached-operator/controllers/memcached_deployment.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../operator/golang/memcached-operator/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../operator/golang/memcached-operator/go.sum" afterDir="false" />
     </list>
@@ -1429,7 +1387,7 @@
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.15/libexec" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1iEAFHfVaUAxFvFOAuz20MbPDnj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -1445,10 +1403,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.vendoring.notification.had.been.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/chulinx/ok8s/examples">
+  <component name="RunManager" selected="Go Test.TestPodType_GetPodsByLabel in github.com/chulinx/ok8s">
     <configuration name="go build github.com/chulinx/ok8s/examples" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="k8operate-go" />
       <working_directory value="$PROJECT_DIR$" />
@@ -1456,28 +1415,6 @@
       <filePath value="$PROJECT_DIR$/examples/main.go" />
       <package value="github.com/chulinx/ok8s/examples" />
       <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestConfigMap_Create in github.com/chulinx/k8operate-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="k8operate-go" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chulinx/k8operate-go" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestConfigMap_Create\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestConfigMap_Watch in github.com/chulinx/k8operate-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="k8operate-go" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chulinx/k8operate-go" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestConfigMap_Watch\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestIngress_Create in github.com/chulinx/k8operate-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -1489,6 +1426,28 @@
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <pattern value="^\QTestIngress_Create\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestPodType_Create in github.com/chulinx/ok8s" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="k8operate-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chulinx/ok8s" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestPodType_Create\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestPodType_GetPodsByLabel in github.com/chulinx/ok8s" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="k8operate-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chulinx/ok8s" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestPodType_GetPodsByLabel\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestService_Create in github.com/chulinx/k8operate-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -1504,11 +1463,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestPodType_GetPodsByLabel in github.com/chulinx/ok8s" />
+        <item itemvalue="Go Test.TestPodType_Create in github.com/chulinx/ok8s" />
         <item itemvalue="Go Build.go build github.com/chulinx/ok8s/examples" />
         <item itemvalue="Go Test.TestService_Create in github.com/chulinx/k8operate-go" />
         <item itemvalue="Go Test.TestIngress_Create in github.com/chulinx/k8operate-go" />
-        <item itemvalue="Go Test.TestConfigMap_Watch in github.com/chulinx/k8operate-go" />
-        <item itemvalue="Go Test.TestConfigMap_Create in github.com/chulinx/k8operate-go" />
       </list>
     </recent_temporary>
   </component>
@@ -1526,6 +1485,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add some notes" />

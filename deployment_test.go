@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	ns       = "test"
+	ns       = "zx"
 	d        = NewDeployment(NewTestClientSet())
 	replicas = int32(1)
 	deploy   = appsv1.Deployment{

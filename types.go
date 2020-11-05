@@ -43,7 +43,7 @@ type K8sApi interface {
 	*  }
 	*  Watch("default",eventFuncs)
 	 */
-	Watch(namespace string, eventFun cache.ResourceEventHandlerFuncs)
+	Watch(namespace string, eventFuncs cache.ResourceEventHandlerFuncs)
 }
 
 // ClientSet kubernetes.Clientset
@@ -65,6 +65,8 @@ type KResource struct {
 	SecretList     apicorev1.SecretList
 	Ingress        v1beta1.Ingress
 	IngressList    v1beta1.IngressList
+	Pod 		   apicorev1.Pod
+	PodList        apicorev1.PodList
 }
 
 func NewK8(inter K8sApi) K8sApi {
