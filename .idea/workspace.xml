@@ -55,7 +55,6 @@
       <change afterPath="$PROJECT_DIR$/../hex-devops/load/mem.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../hex-devops/load/types.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../hex-devops/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pod.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoSomeCase/autoIstio/default_clientset/default_clientset.go" beforeDir="false" afterPath="$PROJECT_DIR$/../GoSomeCase/autoIstio/default_clientset/default_clientset.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/consts.go" beforeDir="false" afterPath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/consts.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/injected.go" beforeDir="false" afterPath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/injected.go" afterDir="false" />
@@ -1365,11 +1364,7 @@
       <change beforePath="$PROJECT_DIR$/../Unicom/short_message_service/vendor/gopkg.in/yaml.v2/yamlprivateh.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Unicom/short_message_service/vendor/modules.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../beggars/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../beggars/cmd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/deployment_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/types.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../operator/golang/memcached-operator/controllers/memcached_deployment.go" beforeDir="false" afterPath="$PROJECT_DIR$/../operator/golang/memcached-operator/controllers/memcached_deployment.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../operator/golang/memcached-operator/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../operator/golang/memcached-operator/go.sum" afterDir="false" />
     </list>
@@ -1499,22 +1494,22 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="604" y="251" width="472" height="576" key="#Build_Tags_&amp;_Vendoring/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602215443822" />
-    <state width="1638" height="280" key="GridCell.Tab.0.bottom" timestamp="1602320329170">
+    <state width="1638" height="280" key="GridCell.Tab.0.bottom" timestamp="1604544551490">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="280" key="GridCell.Tab.0.bottom/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602320329170" />
-    <state width="1638" height="280" key="GridCell.Tab.0.center" timestamp="1602320329169">
+    <state width="1638" height="280" key="GridCell.Tab.0.bottom/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1604544551490" />
+    <state width="1638" height="280" key="GridCell.Tab.0.center" timestamp="1604544551490">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="280" key="GridCell.Tab.0.center/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602320329169" />
-    <state width="1638" height="280" key="GridCell.Tab.0.left" timestamp="1602320329169">
+    <state width="1638" height="280" key="GridCell.Tab.0.center/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1604544551490" />
+    <state width="1638" height="280" key="GridCell.Tab.0.left" timestamp="1604544551489">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="280" key="GridCell.Tab.0.left/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602320329169" />
-    <state width="1638" height="280" key="GridCell.Tab.0.right" timestamp="1602320329170">
+    <state width="1638" height="280" key="GridCell.Tab.0.left/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1604544551489" />
+    <state width="1638" height="280" key="GridCell.Tab.0.right" timestamp="1604544551490">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="280" key="GridCell.Tab.0.right/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602320329170" />
+    <state width="1638" height="280" key="GridCell.Tab.0.right/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1604544551490" />
     <state x="428" y="278" key="IDE.errors.dialog" timestamp="1601462495624">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
