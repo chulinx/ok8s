@@ -6,6 +6,7 @@ import (
 	"k8s.io/api/networking/v1beta1"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/cache"
+	"k8s.io/metrics/pkg/client/clientset/versioned"
 )
 
 // K8sApi define resource operate method
@@ -49,6 +50,10 @@ type K8sApi interface {
 // ClientSet kubernetes.Clientset
 type ClientSets struct {
 	ClientSet *kubernetes.Clientset
+}
+
+type MetricsClientSets struct {
+	MClientSets *versioned.Clientset
 }
 
 // Kubernetes Resource struct
