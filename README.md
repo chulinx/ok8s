@@ -8,6 +8,7 @@
 - Deployment
 - ConfigMap
 - Secret
+- Pod
 
 ## :clap:Resource Option
 - Create 
@@ -16,6 +17,10 @@
 - Update
 - Watch
 - IsExits
+
+## Pod's other methods
+- GetCpu
+- GetMem
 
 ## :wrench: EXAMPLE
 > Your can cat [example](https://github.com/chulinx/ok8s/tree/master/examples) Directory Complete code 
