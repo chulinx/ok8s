@@ -1,7 +1,6 @@
 package ok8s
 
 import (
-	"fmt"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"testing"
@@ -10,7 +9,7 @@ import (
 var (
 	p       = NewPod(NewTestClientSet())
 	podName = "nginx"
-	podInstance = NewPodAll("/Users/lisong/.kube/ack-devops.conf")
+	podInstance = NewPodFunc("/Users/lisong/.kube/ack-devops.conf")
 	pod     = corev1.Pod{
 		ObjectMeta: metav1.ObjectMeta{Name: podName},
 		Spec: corev1.PodSpec{
@@ -36,26 +35,4 @@ func TestPodType_Create(t *testing.T) {
 	AssertError(ok, err, t)
 }
 
-func TestPodType_GetPodsByLabel(t *testing.T) {
-	pod := &PodType{MultiClientSets: MultiClientSets{
-		ClientSets: NewTestClientSet(),
-	},
-	}
-	plist, err := pod.GetByLabel(ns, "web=true")
-	fmt.Println(plist, err)
-}
 
-func TestPodType_GetPodMetrics(t *testing.T) {
-	podInstance.GetMetrics("thanos", "federation-scraper-ack-devops-0")
-}
-
-func TestPodType_GetPodCpu(t *testing.T) {
-	cpuUsage:=podInstance.GetSinglePodCpu("thanos", "federation-scraper-ack-devops-0")
-	fmt.Println(cpuUsage)
-}
-
-func TestPodType_GetRequestResourceAndGetLimitResource(t *testing.T) {
-	fmt.Println(podInstance.GetRequestResource("zx","nginx-6dfd4b854c-j46jr"))
-	fmt.Println(podInstance.GetLimitResource("zx","nginx-6dfd4b854c-j46jr"))
-
-}

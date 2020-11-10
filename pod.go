@@ -10,31 +10,22 @@ import (
 	"time"
 )
 
-// The MultiClientSets contain k8s clients and metrics clients
-type MultiClientSets struct {
-	ClientSets
-	MetricsClientSets
-}
 
 type PodType struct {
-	MultiClientSets
+	ClientSets
 	KResource
 }
 
-// NewPodAll can use all methods
-func NewPodAll(kubeConfig string) *PodType {
+func NewPodFunc(kubeConfig string) *PodType {
 	return &PodType{
-		MultiClientSets: MultiClientSets{
-			MetricsClientSets: MetricsClientSets{MClientSets: MetricsClientSet("/Users/lisong/.kube/ack-devops.conf")},
-			ClientSets:        ClientSets{ClientSet: ClientSet(kubeConfig)},
-		},
+		ClientSets:ClientSets{ClientSet: ClientSet(kubeConfig)},
 	}
 }
 
 // NewPod is Pod's K8sApi interface
 func NewPod(cs ClientSets) K8sApi {
 	pod := &PodType{
-		MultiClientSets: MultiClientSets{ClientSets: cs},
+		ClientSets: cs,
 	}
 	return NewK8(pod)
 }
@@ -115,83 +106,10 @@ func (p *PodType) Watch(namespace string, eventFuncs cache.ResourceEventHandlerF
 	}
 }
 
-func (p *PodType) GetRequestResource(namespace, name string) map[string]int {
-	var cpu, mem, storage int
-	result := make(map[string]int)
-	ok, kResource := p.Get(namespace, name)
-	if !ok {
-		return result
-	}
-	for _, container := range kResource.Pod.Spec.Containers {
-		cpu = cpu + MetricsToInt(container.Resources.Requests.Cpu().String(), "m")
-		mem = mem + MetricsToInt(AllToMi(container.Resources.Requests.Memory().String()), "Mi")
-		storage = storage + MetricsToInt(container.Resources.Requests.Storage().String(), "")
-	}
-	result["cpu"], result["mem"], result["storage"] = cpu, mem, storage
-	return result
-}
-
-func (p *PodType) GetLimitResource(namespace, name string) map[string]int {
-	var cpu, mem, storage int
-	result := make(map[string]int)
-	ok, kResource := p.Get(namespace, name)
-	if !ok {
-		return result
-	}
-	for _, container := range kResource.Pod.Spec.Containers {
-		cpu = cpu + MetricsToInt(container.Resources.Limits.Cpu().String(), "m")
-		mem = mem + MetricsToInt(AllToMi(container.Resources.Limits.Memory().String()), "Mi")
-		storage = storage + MetricsToInt(container.Resources.Limits.Storage().String(), "")
-	}
-	result["cpu"], result["mem"], result["storage"] = cpu, mem, storage
-	return result
-}
-
 func (p *PodType) GetByLabel(namespace string, label string) (*corev1.PodList, error) {
 	podList, err := p.Prefix(namespace).(v1.PodInterface).List(DefaultTimeOut(), metav1.ListOptions{LabelSelector: label})
 	if err != nil {
 		return podList, err
 	}
 	return podList, nil
-}
-
-// GetMetrics return a map.
-// This contain cpu(m)、mem(Mi) and storage
-func (p *PodType) GetMetrics(namespace, name string) map[string]int {
-	result := make(map[string]int)
-	var cpu, mem, storage int
-	podMetric, _ := p.MClientSets.MetricsV1beta1().PodMetricses(namespace).Get(DefaultTimeOut(), name, metav1.GetOptions{})
-	for _, container := range podMetric.Containers {
-		cpu = cpu + MetricsToInt(container.Usage.Cpu().String(), "m")
-		mem = mem + MetricsToInt(container.Usage.Memory().String(), "Ki")/1000
-		storage = storage + MetricsToInt(container.Usage.Storage().String(), "")
-	}
-	result["cpu"], result["mem"], result["storage"] = cpu, mem, storage
-	return result
-}
-
-// GetContainerCpu return a pod all containers cpu(map[string]int)
-func (p *PodType) GetContainerCpu(namespace, name string) (map[string]int, error) {
-	containerCpu := make(map[string]int)
-	podMetric, err := p.MClientSets.MetricsV1beta1().PodMetricses(namespace).Get(DefaultTimeOut(), name, metav1.GetOptions{})
-	if err != nil {
-		return containerCpu, err
-	}
-	for _, container := range podMetric.Containers {
-		containerName := container.Name
-		if containerName != "" {
-			containerCpu[containerName] = MetricsToInt(container.Usage.Cpu().String(), "m")
-		}
-	}
-	return containerCpu, nil
-}
-
-// GetSinglePodCpu return pod cpu(int)
-func (p *PodType) GetSinglePodCpu(namespace, name string) (cpu int) {
-	return p.GetMetrics(namespace, name)["cpu"]
-}
-
-// GetSinglePodMem return mem(int)
-func (p *PodType) GetSinglePodMem(namespace, name string) int {
-	return p.GetMetrics(namespace, name)["mem"]
 }

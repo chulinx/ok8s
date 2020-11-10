@@ -18,7 +18,7 @@
 - Watch
 - IsExits
 
-## Pod's other methods
+##  Pod's Metrics  methods
 - GetCpu
 - GetMem
 
