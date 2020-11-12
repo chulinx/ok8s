@@ -31,10 +31,11 @@
       <change afterPath="$PROJECT_DIR$/../cleandatafordb/postgresql_test.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../dswfp/Readme.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../dswfp/cmd/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dswfp/dao/dao.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../dswfp/dao/influxGet.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/dao/influxGet_test.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../dswfp/dao/influxSet.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dswfp/dao/sync.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/dao/influxSync.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/dao/influxSync_test.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../dswfp/dao/types.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../dswfp/go.mod" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../dswfp/go.sum" afterDir="false" />
@@ -48,7 +49,10 @@
       <change afterPath="$PROJECT_DIR$/../dswfp/scripts/buildenv.sh" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../dswfp/utils/assert.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../dswfp/utils/error.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/utils/test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/utils/test_test.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../dswfp/utils/tools.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dswfp/utils/tools_test.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../dswfp/vars/vars.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../hex-devops/load/const.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../hex-devops/load/cpu.go" afterDir="false" />
@@ -56,8 +60,6 @@
       <change afterPath="$PROJECT_DIR$/../hex-devops/load/mem.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../hex-devops/load/types.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../hex-devops/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metrics.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metrics_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoSomeCase/autoIstio/default_clientset/default_clientset.go" beforeDir="false" afterPath="$PROJECT_DIR$/../GoSomeCase/autoIstio/default_clientset/default_clientset.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/consts.go" beforeDir="false" afterPath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/consts.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/injected.go" beforeDir="false" afterPath="$PROJECT_DIR$/../GoSomeCase/autoIstio/injection/injected.go" afterDir="false" />
@@ -1368,9 +1370,8 @@
       <change beforePath="$PROJECT_DIR$/../Unicom/short_message_service/vendor/modules.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../beggars/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../beggars/cmd/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pod.go" beforeDir="false" afterPath="$PROJECT_DIR$/pod.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pod_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pod_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metrics.go" beforeDir="false" afterPath="$PROJECT_DIR$/metrics.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metrics_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/metrics_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../operator/golang/memcached-operator/controllers/memcached_deployment.go" beforeDir="false" afterPath="$PROJECT_DIR$/../operator/golang/memcached-operator/controllers/memcached_deployment.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../operator/golang/memcached-operator/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../operator/golang/memcached-operator/go.sum" afterDir="false" />
     </list>
@@ -1409,6 +1410,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Go Test.TestMetricsType_GetSinglePodCpu in github.com/chulinx/ok8s">
+    <configuration name="TestMetricsType_GetRequestResource in github.com/chulinx/ok8s" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="k8operate-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/chulinx/ok8s" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestMetricsType_GetRequestResource\E$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestMetricsType_GetSinglePodCpu in github.com/chulinx/ok8s" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="k8operate-go" />
       <working_directory value="$PROJECT_DIR$" />
@@ -1429,17 +1441,6 @@
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <pattern value="^\QTestPodType_GetPodCpu\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestPodType_GetPodMetrics in github.com/chulinx/ok8s" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="k8operate-go" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/chulinx/ok8s" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestPodType_GetPodMetrics\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestPodType_GetRequestResource in github.com/chulinx/ok8s" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -1467,10 +1468,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Go Test.TestMetricsType_GetSinglePodCpu in github.com/chulinx/ok8s" />
+        <item itemvalue="Go Test.TestMetricsType_GetRequestResource in github.com/chulinx/ok8s" />
         <item itemvalue="Go Test.TestPodType_GetRequestResourceAndGetLimitResource in github.com/chulinx/ok8s" />
         <item itemvalue="Go Test.TestPodType_GetRequestResource in github.com/chulinx/ok8s" />
         <item itemvalue="Go Test.TestPodType_GetPodCpu in github.com/chulinx/ok8s" />
-        <item itemvalue="Go Test.TestPodType_GetPodMetrics in github.com/chulinx/ok8s" />
       </list>
     </recent_temporary>
   </component>
@@ -1502,25 +1503,25 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="604" y="251" width="472" height="576" key="#Build_Tags_&amp;_Vendoring/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1602215443822" />
-    <state width="1638" height="297" key="GridCell.Tab.0.bottom" timestamp="1604713792860">
+    <state width="1638" height="297" key="GridCell.Tab.0.bottom" timestamp="1605178965295">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="297" key="GridCell.Tab.0.bottom/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1604651361413" />
+    <state width="1638" height="297" key="GridCell.Tab.0.bottom/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1605178965295" />
     <state width="1638" height="297" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1604713792860" />
-    <state width="1638" height="297" key="GridCell.Tab.0.center" timestamp="1604713792859">
+    <state width="1638" height="297" key="GridCell.Tab.0.center" timestamp="1605178965294">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="297" key="GridCell.Tab.0.center/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1604651361412" />
+    <state width="1638" height="297" key="GridCell.Tab.0.center/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1605178965294" />
     <state width="1638" height="297" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1604713792859" />
-    <state width="1638" height="297" key="GridCell.Tab.0.left" timestamp="1604713792857">
+    <state width="1638" height="297" key="GridCell.Tab.0.left" timestamp="1605178965292">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="297" key="GridCell.Tab.0.left/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1604651361411" />
+    <state width="1638" height="297" key="GridCell.Tab.0.left/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1605178965292" />
     <state width="1638" height="297" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1604713792857" />
-    <state width="1638" height="297" key="GridCell.Tab.0.right" timestamp="1604713792859">
+    <state width="1638" height="297" key="GridCell.Tab.0.right" timestamp="1605178965294">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="297" key="GridCell.Tab.0.right/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1604651361413" />
+    <state width="1638" height="297" key="GridCell.Tab.0.right/0.23.1680.1027/1680.23.1920.1057@0.23.1680.1027" timestamp="1605178965294" />
     <state width="1638" height="297" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1604713792859" />
     <state x="428" y="278" key="IDE.errors.dialog" timestamp="1601462495624">
       <screen x="0" y="23" width="1680" height="1027" />

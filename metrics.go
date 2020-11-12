@@ -16,58 +16,57 @@ func NewMetrics(kubeConfig string) *MetricsType {
 	}
 }
 
-func (m *MetricsType) GetRequestResource(namespace, name string) map[string]int {
-	var cpu, mem, storage int
-	result := make(map[string]int)
+// default unit cpu is,m mem is Mi
+func (m *MetricsType) GetRequestResource(namespace, name string) map[string]int64 {
+	var cpu, mem, storage int64
+	result := make(map[string]int64)
 	ok, kResource := m.Get(namespace, name)
 	if !ok {
 		return result
 	}
 	for _, container := range kResource.Pod.Spec.Containers {
-		cpu = cpu + MetricsToInt(container.Resources.Requests.Cpu().String(), "m")
-		mem = mem + MetricsToInt(AllToMi(container.Resources.Requests.Memory().String()), "Mi")
-		storage = storage + MetricsToInt(container.Resources.Requests.Storage().String(), "")
+		cpu = cpu +container.Resources.Requests.Cpu().MilliValue()
+		mem = mem + container.Resources.Requests.Memory().Value()/1024/1024
+		storage = storage + container.Resources.Requests.Storage().Value()
 	}
 	result["cpu"], result["mem"], result["storage"] = cpu, mem, storage
 	return result
 }
 
-func (m *MetricsType) GetLimitResource(namespace, name string) map[string]int {
-	var cpu, mem, storage int
-	result := make(map[string]int)
+func (m *MetricsType) GetLimitResource(namespace, name string) map[string]int64 {
+	var cpu, mem, storage int64
+	result := make(map[string]int64)
 	ok, kResource := m.Get(namespace, name)
 	if !ok {
 		return result
 	}
 	for _, container := range kResource.Pod.Spec.Containers {
-		cpu = cpu + MetricsToInt(container.Resources.Limits.Cpu().String(), "m")
-		mem = mem + MetricsToInt(AllToMi(container.Resources.Limits.Memory().String()), "Mi")
-		storage = storage + MetricsToInt(container.Resources.Limits.Storage().String(), "")
+		cpu = cpu +container.Resources.Limits.Cpu().MilliValue()
+		mem = mem + container.Resources.Limits.Memory().Value()/1024/1024
+		storage = storage + container.Resources.Limits.Storage().Value()
 	}
 	result["cpu"], result["mem"], result["storage"] = cpu, mem, storage
 	return result
 }
 
-
-
-// GetMetrics return a map.
+// GetPodMetrics return a map.
 // This contain cpu(m)、mem(Mi) and storage
-func (m *MetricsType) GetMetrics(namespace, name string) map[string]int {
-	result := make(map[string]int)
-	var cpu, mem, storage int
+func (m *MetricsType) GetPodMetrics(namespace, name string) map[string]int64 {
+	result := make(map[string]int64)
+	var cpu, mem, storage int64
 	podMetric, _ := m.MClientSets.MetricsV1beta1().PodMetricses(namespace).Get(DefaultTimeOut(), name, metav1.GetOptions{})
 	for _, container := range podMetric.Containers {
-		cpu = cpu + MetricsToInt(container.Usage.Cpu().String(), "m")
-		mem = mem + MetricsToInt(container.Usage.Memory().String(), "Ki")/1000
-		storage = storage + MetricsToInt(container.Usage.Storage().String(), "")
+		cpu = cpu + container.Usage.Cpu().MilliValue()
+		mem = mem + container.Usage.Memory().Value()/1024/1024
+		storage = storage + container.Usage.Storage().Value()
 	}
 	result["cpu"], result["mem"], result["storage"] = cpu, mem, storage
 	return result
 }
 
 // GetContainerCpu return a pod all containers cpu(map[string]int)
-func (m *MetricsType) GetContainerCpu(namespace, name string) (map[string]int, error) {
-	containerCpu := make(map[string]int)
+func (m *MetricsType) GetContainerCpu(namespace, name string) (map[string]int64, error) {
+	containerCpu := make(map[string]int64)
 	podMetric, err := m.MClientSets.MetricsV1beta1().PodMetricses(namespace).Get(DefaultTimeOut(), name, metav1.GetOptions{})
 	if err != nil {
 		return containerCpu, err
@@ -75,18 +74,18 @@ func (m *MetricsType) GetContainerCpu(namespace, name string) (map[string]int, e
 	for _, container := range podMetric.Containers {
 		containerName := container.Name
 		if containerName != "" {
-			containerCpu[containerName] = MetricsToInt(container.Usage.Cpu().String(), "m")
+			containerCpu[containerName] = container.Usage.Cpu().MilliValue()
 		}
 	}
 	return containerCpu, nil
 }
 
-// GetSinglePodCpu return pod cpu(int)
-func (m *MetricsType) GetSinglePodCpu(namespace, name string) (cpu int) {
-	return m.GetMetrics(namespace, name)["cpu"]
+// GetSinglePodCpuUsage return pod cpu(int)
+func (m *MetricsType) GetSinglePodCpuUsage(namespace, name string) (cpu int64) {
+	return m.GetPodMetrics(namespace, name)["cpu"]
 }
 
-// GetSinglePodMem return mem(int)
-func (m *MetricsType) GetSinglePodMem(namespace, name string) int {
-	return m.GetMetrics(namespace, name)["mem"]
+// GetSinglePodMemUsage return mem(int)
+func (m *MetricsType) GetSinglePodMemUsage(namespace, name string) int64 {
+	return m.GetPodMetrics(namespace, name)["mem"]
 }
